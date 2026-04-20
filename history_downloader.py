@@ -3,6 +3,7 @@ import os
 
 # 1. The "Big" History List (Long-form articles only)
 history_topics = [
+    "Muhammad",  # The Seerah / Foundation
     "History of Islam",
     "Rashidun Caliphate",
     "Umayyad Caliphate",
