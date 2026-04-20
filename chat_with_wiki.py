@@ -22,7 +22,7 @@ system_prompt=(
     "You should handle spelling variations of names (e.g., Umar/Omar, Uthman/Osman, Muhammad/Mohammed).\n"
     "Prefer matching meaning over exact spelling.\n"
     )
-
+)
 # High-quality embeddings (replaces BAAI local model)
 Settings.embed_model = OpenAIEmbedding(model="text-embedding-3-small")
 
