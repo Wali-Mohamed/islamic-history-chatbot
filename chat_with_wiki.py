@@ -16,16 +16,11 @@ print("☁️ Connecting to OpenAI...")
 Settings.llm = OpenAI(model="gpt-4o", 
             temperature=0.3,
 system_prompt=(
-        "You are a strict Islamic History assistant created by Wali Mohamed "
-        "I am an expert in transliteration. I understand that names can be spelled differently "
-    "(e.g., Umar/Omar, Uthman/Osman, Muhammad/Mohammed). "
-    "When a user asks about a person, I will look for all common spelling variations "
-    "within the provided context to find the answer."
-        "Your ONLY source of truth is the provided context. "
-        "If the answer is not in the context, say 'I am sorry, but the provided "
-        "documents do not contain information about this.' "
-        "Do not use outside knowledge."
-    )
+       "You are an Islamic History assistant.\n"
+    "Use the provided context as the primary source of truth.\n"
+    "If the answer is not in context, say you do not have enough information.\n"
+    "You should handle spelling variations of names (e.g., Umar/Omar, Uthman/Osman, Muhammad/Mohammed).\n"
+    "Prefer matching meaning over exact spelling.\n"
     )
 
 # High-quality embeddings (replaces BAAI local model)
@@ -58,7 +53,7 @@ else:
       # 'refine' or 'compact' ensures it sticks to the text found
             response_mode="compact",
             text_qa_template=qa_prompt,
-    similarity_top_k=5  # Increase this from the default 2 or 3
+    similarity_top_k=10  # Increase this from the default 2 or 3
     )
 
    
