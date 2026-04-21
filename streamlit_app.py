@@ -13,6 +13,7 @@ div[data-testid="stChatInput"] textarea { background-color: #111111; color: #fff
 """, unsafe_allow_html=True)
 
 st.title("Islamic History Assistant")
+st.markdown("**Created by Wali Mohamed**")
 
 if "history" not in st.session_state:
     st.session_state.history = []
